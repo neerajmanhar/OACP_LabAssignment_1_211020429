@@ -1,0 +1,4 @@
+Output: 1
+Output: 1936
+Output: 550269055
+Output: -1
