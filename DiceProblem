@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int findWays(int N, int dp[])
+{
+    if (N == 0) {
+        return 1;
+    }
+    if (dp[N] != -1) {
+        return dp[N];
+    }
+    int cnt = 0;
+    for (int i = 1; i <= 6; i++) {
+        if (N - i >= 0) {
+            cnt = cnt
+                  + findWays(N - i, dp);
+        }
+    }  
+    return dp[N] = cnt;
+}
+int main()
+{
+    int N = 4;
+    int dp[N + 1];
+    memset(dp, -1, sizeof(dp));
+    cout << findWays(N, dp);
+    return 0;
+}
